@@ -14,16 +14,16 @@ const ComputerChoice = function GetComputerChoice(){
 };
 
 const UserChoice = function GetUserChoice(){
-    let choice = choice.toLowerCase(prompt("choose your option",''))
+    let choice = prompt("choose your option",'').toLowerCase();
         if (choice === 'rock'|| choice === 'paper' || choice === 'scissors'){ return choice;}
             else
             {console.log('Error!');}
         }
-    }
 
 
 function GameRound(PlayerSelection,ComputerSelection){
     PlayerSelection = UserChoice();
     ComputerSelection = ComputerChoice();
+    console.log(PlayerSelection, ComputerSelection);
 
 }
