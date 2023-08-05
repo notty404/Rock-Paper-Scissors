@@ -20,10 +20,35 @@ const UserChoice = function GetUserChoice(){
             {console.log('Error!');}
         }
 
-
-function GameRound(PlayerSelection,ComputerSelection){
-    PlayerSelection = UserChoice();
-    ComputerSelection = ComputerChoice();
-    console.log(PlayerSelection, ComputerSelection);
-
+let PLAYERSCORE = 0;
+let COMPUTERSCORE = 0;
+function PlayRound(){
+    let playerSelection = UserChoice();
+    let computerSelection = ComputerChoice();
+    if (playerSelection === computerSelection){
+        return `it's a tie, you both chose ${playerSelection}`;
+    }
+    else if (playerSelection == 'rock' && computerSelection == 'scissors'){
+        PLAYERSCORE+= 1;
+        return `you win, rock beats scissors`;
+    }
+    else if (playerSelection == 'paper' && computerSelection == 'rock'){
+        PLAYERSCORE+=1;
+        return `you win, paper beats rock`;
+    }
+    else if (playerSelection == 'scissors' && computerSelection == 'paper'){
+        PLAYERSCORE+= 1;
+        return `you win, scissors beats paper`;
+    }
+    else {
+        COMPUTERSCORE+= 1;
+        return `you lose, ${computerSelection} beats ${playerSelection}`;
+    }
+}
+const game = function(){
+    for(let i = 0; i < 5; i++){
+    console.log(PlayRound());
+    }
+    let result = PLAYERSCORE > COMPUTERSCORE ? 'You win' : 'You Lose';
+    return result;
 }
