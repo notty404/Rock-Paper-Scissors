@@ -1,5 +1,5 @@
-const ComputerChoice = function GetComputerChoice(){
-    let RandomNum = Math.floor(Math.random()*3);
+const ComputerChoice = function GetComputerChoice(){ // returns a random option between 'rock, paper and scissors'
+    let RandomNum = Math.floor(Math.random()*3); 
     switch (RandomNum){
         case 0:
             return "rock"
